@@ -37,7 +37,7 @@ var expectedFilesInDistDir = [
         'doc/misc.md',
         'doc/usage.md',
 
-    'favicon.ico',
+    'favicon',
     'humans.txt',
 
     'img/',
