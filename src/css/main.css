@@ -32,6 +32,10 @@ h1 {
 .maverick {
   padding: 5%; }
 
+.alert {
+  max-width: 75%;
+  padding-left: 20%; }
+
 .fa {
   margin: 5px; }
 
@@ -41,11 +45,19 @@ h1 {
 .fa-linkedin-square {
   color: #0077B5; }
 
+.fa-github {
+  color: #FF9900; }
+
+#school {
+  background-color: #fff;
+  padding-bottom: 15px;
+  min-height: 200px; }
+
 #footer {
   background-color: #000;
   color: #fff; }
 
-.socialLinks {
+.socialLinks, .school {
   display: flex;
   justify-content: center; }
 
