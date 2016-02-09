@@ -36,9 +36,9 @@ describe("Test my website on Github", function () {
         }
         done();
     });
-    // checking travis CI
+
     it('should check the url', function (done) {
-        client
+        return client
             .url(github._url)
             .getTitle().then(function (title) {
                 (title).should.be.equal(github.title)
@@ -47,7 +47,7 @@ describe("Test my website on Github", function () {
     });
 
     it('should have carousel', function (done) {
-        client
+        return client
             .isExisting(github.carousel).then(function (existing) {
                 existing.should.be.true();
             })
@@ -55,7 +55,7 @@ describe("Test my website on Github", function () {
     });
 
     it('the carousel should rotate', function (done) {
-        client
+        return client
             .getAttribute(github.imgAlt, 'alt').then(function (alt) {
                 client.waitUntil(function () {
                     return this.getAttribute(github.imgAlt, 'alt').then(function (newAlt) {
@@ -67,7 +67,7 @@ describe("Test my website on Github", function () {
     });
 
     it('should have 2 schools', function (done) {
-        client
+        return client
             .elements(github.schoolCN).then(function (count) {
                 (count.value.length).should.be.equal(2)
             })
@@ -75,7 +75,7 @@ describe("Test my website on Github", function () {
     });
 
     it('should have work experiance after school section', function (done) {
-        client
+        return client
             .isExisting(github.workLoc).then(function (existing) {
                 existing.should.be.true();
             })
@@ -83,7 +83,7 @@ describe("Test my website on Github", function () {
     });
 
     it('should verify the school section has a white background', function (done) {
-        client
+        return client
             .getCssProperty(github.schoolID, 'background-color').then(function (color) {
                 (color.parsed.hex).should.be.equal(github.white)
             })
@@ -91,7 +91,7 @@ describe("Test my website on Github", function () {
     });
 
     it('should verify the work has 3 jobs', function (done) {
-        client
+        return client
             .elements(github.jobs).then(function (count) {
                 (count.value.length).should.be.equal(3)
             })
@@ -99,7 +99,7 @@ describe("Test my website on Github", function () {
     });
 
     it('should click on tap|QA and verify on page', function (done) {
-        client
+        return client
             .click(github.jobs)
             .waitUntil(function () {
                 return this.getTabIds().then(function (tabs) {
@@ -117,7 +117,7 @@ describe("Test my website on Github", function () {
     });
 
     it('should verify resume link exists', function (done) {
-        client
+        return client
             .url(github._url)
             .waitForVisible(github.carousel, github.fifteen)
             .isExisting(github.resumeLink).then(function (existing) {
@@ -127,7 +127,7 @@ describe("Test my website on Github", function () {
     });
 
     it('should verify contact me is at bottom of page', function (done) {
-        client
+        return client
             .isExisting(github.contactLoc).then(function (existing) {
                 existing.should.be.true();
             })
@@ -135,7 +135,7 @@ describe("Test my website on Github", function () {
     });
 
     it('should check all href of footer links', function (done) {
-        client
+        return client
             .getAttribute(github.fa, 'href').then(function (href) {
                 (href).should.be.eql(github.href)
             })
@@ -143,7 +143,7 @@ describe("Test my website on Github", function () {
     });
 
     it('should check github link', function (done) {
-        client
+        return client
             .click(github.github)
             .waitUntil(function () {
                 return this.getTabIds().then(function (tabs) {
