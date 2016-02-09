@@ -28,12 +28,12 @@ describe("Test my website on Github", function () {
                 client.switchTab(tabs[0]);
             }
         });
-        //if (this.currentTest.state == 'failed') {
-        //    //save screenshot on test failure
-        //    screenshot = commonFunctions.generateScreenshotName(test_name,
-        //        this.currentTest.title);
-        //    client.saveScreenshot(screenshot);
-        //}
+        if (this.currentTest.state == 'failed') {
+            //save screenshot on test failure
+            screenshot = commonFunctions.generateScreenshotName(test_name,
+                this.currentTest.title);
+            client.saveScreenshot(screenshot);
+        }
         done();
     });
 
