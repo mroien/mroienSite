@@ -6,7 +6,7 @@ after_success:
   - |
 
       # Automatically update the content from the `dist/` directory
-      $(npm bin)/commit-changes --branch "master" \
+      $(npm bin)/commit-changes --branch "gh-pages" \
                                 --commands "npm run build" \
                                 --commit-message "Update content from the \`dist\` directory [skip ci]"
 
@@ -43,5 +43,6 @@ language: node_js
 node_js:
   - "0.12"
   - "4"
+  - "5"
 
 sudo: false

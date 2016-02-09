@@ -8,3 +8,9 @@ Want to keep the site simple for now. Do not want to add extra words to site as 
 - Bootstrap
 - Google Fonts
 - Font Awesome
+
+## Testing
+- mocha
+- should
+- webdriverIO
+
