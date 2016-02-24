@@ -21,9 +21,10 @@
   "homepage": "https://github.com/mroien/mroien#readme",
   "devDependencies": {
     "mocha": "^2.4.5",
+    "mocha-phantomjs": "^4.0.2",
     "npm-check-updates": "^2.5.8",
     "selenium-standalone": "^4.9.0",
-    "should": "^8.2.1",
+    "should": "^8.2.2",
     "webdriverio": "3.4.0"
   }
 }

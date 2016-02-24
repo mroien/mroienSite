@@ -10,6 +10,8 @@ var webdriverio = require('webdriverio'),
     client;
 
 describe("Test my website on Github", function () {
+    'use strict';
+
     this.timeout(github.thirty);
 
     before(function (done) {
@@ -28,33 +30,33 @@ describe("Test my website on Github", function () {
                 client.switchTab(tabs[0]);
             }
         });
-        if (this.currentTest.state == 'failed') {
+        if (this.currentTest.state === 'failed') {
             //save screenshot on test failure
-            screenshot = commonFunctions.generateScreenshotName(test_name,
+            let screenshot = commonFunctions.generateScreenshotName(test_name,
                 this.currentTest.title);
             client.saveScreenshot(screenshot);
         }
         done();
     });
 
-    it('should check the url', function (done) {
+    it('should check the url', (done) => {
         return client
             .url(github._url)
-            .getTitle().then(function (title) {
+            .getTitle().then((title) => {
                 (title).should.be.equal(github.title)
             })
             .call(done);
     });
 
-    it('should have carousel', function (done) {
+    it('should have carousel', (done) => {
         return client
-            .isExisting(github.carousel).then(function (existing) {
+            .isExisting(github.carousel).then((existing) => {
                 existing.should.be.true();
             })
             .call(done);
     });
 
-    it('the carousel should rotate', function (done) {
+    it('the carousel should rotate', (done) => {
         return client
             .getAttribute(github.imgAlt, 'alt').then(function (alt) {
                 client.waitUntil(function () {
@@ -66,39 +68,39 @@ describe("Test my website on Github", function () {
             .call(done);
     });
 
-    it('should have 2 schools', function (done) {
+    it('should have 2 schools', (done) => {
         return client
-            .elements(github.schoolCN).then(function (count) {
+            .elements(github.schoolCN).then((count) => {
                 (count.value.length).should.be.equal(2)
             })
             .call(done);
     });
 
-    it('should have work experiance after school section', function (done) {
+    it('should have work experiance after school section', (done) =>{
         return client
-            .isExisting(github.workLoc).then(function (existing) {
+            .isExisting(github.workLoc).then((existing) =>{
                 existing.should.be.true();
             })
             .call(done);
     });
 
-    it('should verify the school section has a white background', function (done) {
+    it('should verify the school section has a white background', (done) =>{
         return client
-            .getCssProperty(github.schoolID, 'background-color').then(function (color) {
+            .getCssProperty(github.schoolID, 'background-color').then((color) =>{
                 (color.parsed.hex).should.be.equal(github.white)
             })
             .call(done);
     });
 
-    it('should verify the work has 3 jobs', function (done) {
+    it('should verify the work has 3 jobs', (done) => {
         return client
-            .elements(github.jobs).then(function (count) {
+            .elements(github.jobs).then((count) => {
                 (count.value.length).should.be.equal(3)
             })
             .call(done);
     });
 
-    it('should click on tap|QA and verify on page', function (done) {
+    it('should click on tap|QA and verify on page', (done) => {
         return client
             .click(github.jobs)
             .waitUntil(function () {
@@ -116,33 +118,33 @@ describe("Test my website on Github", function () {
             .call(done);
     });
 
-    it('should verify resume link exists', function (done) {
+    it('should verify resume link exists', (done) => {
         return client
             .url(github._url)
             .waitForVisible(github.carousel, github.fifteen)
-            .isExisting(github.resumeLink).then(function (existing) {
+            .isExisting(github.resumeLink).then((existing) => {
                 existing.should.be.true();
             })
             .call(done);
     });
 
-    it('should verify contact me is at bottom of page', function (done) {
+    it('should verify contact me is at bottom of page', (done) => {
         return client
-            .isExisting(github.contactLoc).then(function (existing) {
+            .isExisting(github.contactLoc).then((existing) => {
                 existing.should.be.true();
             })
             .call(done);
     });
 
-    it('should check all href of footer links', function (done) {
+    it('should check all href of footer links', (done) => {
         return client
-            .getAttribute(github.fa, 'href').then(function (href) {
+            .getAttribute(github.fa, 'href').then((href) => {
                 (href).should.be.eql(github.href)
             })
             .call(done);
     });
 
-    it('should check github link', function (done) {
+    it('should check github link', (done) => {
         return client
             .click(github.github)
             .waitUntil(function () {
