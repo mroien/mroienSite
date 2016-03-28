@@ -40,10 +40,10 @@ git:
 
   language: node_js
   node_js:
+    - "5"
+    - "4"
     - "0.12"
     - "0.10"
     - "iojs"
-    - 4
-    - 5
 
 sudo: false
