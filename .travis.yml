@@ -35,6 +35,11 @@ env:
 
     - secure: "OQnRHkXKdvSujTPm0DSXJFrso0zKltkso0e8zF/2GLI7ouv60ELHhYCrWFuoeefSJFbiPeH/9GXnTAv7y+gC08Ba/DSlXGaHl4db5xU/7AazzQR4YaTks6z0CfvlftdlimGOY27tuDU8hMfqHJKybJGcEvFKCVJms/7udYYh+CA="
 
+branches:
+  only:
+    - master
+    - gh-pages
+
 git:
   depth: 10
 
