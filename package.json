@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "BROWSER=chrome mocha"
   },
   "repository": {
     "type": "git",
