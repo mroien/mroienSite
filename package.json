@@ -6,6 +6,9 @@
   "directories": {
     "test": "test"
   },
+  "bin": {
+  "start-selenium": "./bin/start-selenium"
+  },
   "scripts": {
     "test": "mocha"
   },
