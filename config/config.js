@@ -28,7 +28,7 @@ module.exports = {
         } else {
             var desktopConfig = {
                 desiredCapabilities: {
-                    browserName: process.env.BROWSER
+                    browserName: 'chrome'
                 }
             };
             return desktopConfig;
