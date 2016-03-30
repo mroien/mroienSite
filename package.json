@@ -11,8 +11,6 @@
   },
   "scripts": {
     "test": "mocha",
-    "selenium-install": "selenium-standalone install",
-    "selenium-start": "selenium-standalone start"
   },
   "repository": {
     "type": "git",
