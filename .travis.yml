@@ -34,18 +34,22 @@
 #    #     https://help.github.com/articles/creating-an-access-token-for-command-line-use/
 #
 #    - secure: "OQnRHkXKdvSujTPm0DSXJFrso0zKltkso0e8zF/2GLI7ouv60ELHhYCrWFuoeefSJFbiPeH/9GXnTAv7y+gC08Ba/DSlXGaHl4db5xU/7AazzQR4YaTks6z0CfvlftdlimGOY27tuDU8hMfqHJKybJGcEvFKCVJms/7udYYh+CA="
-branches:
-  only:
-    - master
-    - gh-pages
+#branches:
+#  only:
+#    - master
+#    - gh-pages
+language: node_js
+node_js:
+  - "5"
+  - "5.1"
+  - "4"
+  - "4.2"
+  - "4.1"
+  - "4.0"
+  - "0.12"
+  - "0.11"
+  - "0.10"
+  - "0.8"
+  - "0.6"
+  - "iojs"
 
-git:
-  depth: 10
-
-  language: node_js
-  node_js:
-    - "5"
-    - "4"
-    - "0.12"
-    - "0.10"
-    - "iojs"
