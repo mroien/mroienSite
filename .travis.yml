@@ -51,4 +51,4 @@ git:
     - "0.10"
     - "iojs"
 
-sudo: false
+sudo: true
