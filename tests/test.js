@@ -31,7 +31,7 @@ describe("Test my website on Github", function () {
             }
         });
         if (this.currentTest.state === 'failed') {
-            //save screenshot on test failure
+            //save screenshot on tests failure
             let screenshot = commonFunctions.generateScreenshotName(test_name,
                 this.currentTest.title);
             client.saveScreenshot(screenshot);

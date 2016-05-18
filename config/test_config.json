@@ -1,0 +1,9 @@
+{
+    "mroien": {
+        "type": "testSuite",
+        "testDir": "test",
+        "tests": [
+            "test"
+        ]
+    }
+}

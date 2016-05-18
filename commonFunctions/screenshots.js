@@ -17,7 +17,7 @@ module.exports = {
             clean_title = clean_title.slice(0,200);
         }
 
-        return './test-results/screenshots/' + test_name + '_' +
+        return './tests-results/screenshots/' + test_name + '_' +
             clean_title + '_' + n + '.png';
     }
 
